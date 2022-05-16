@@ -27,11 +27,11 @@ class MyGridLayout(GridLayout):
         self.area = TextInput(multiline=True)
         self.top_grid.add_widget(self.area)
 
-        self.top_grid.add_widget(Label(text="Bedrooms: "))
+        self.top_grid.add_widget(Label(text="Rooms: "))
         # Add Input Box
-        self.bedrooms = Spinner(text='Bedrooms',
-                                values=('1', '2', '3', '4', '5'))
-        self.top_grid.add_widget(self.bedrooms)
+        self.rooms = Spinner(text='Rooms',
+                             values=('1', '2', '3', '4', '5'))
+        self.top_grid.add_widget(self.rooms)
 
         self.top_grid.add_widget(Label(text="Floor: "))
         # Add Input Box
@@ -50,16 +50,16 @@ class MyGridLayout(GridLayout):
 
     def get_price(self, instance):
         area = int(self.area.text)
-        bedrooms = int(self.bedrooms.text)
+        rooms = int(self.rooms.text)
         floor = int(self.floor.text)
 
-        # print(f'Your area is {area} m, you have {bedrooms} bedrooms, and your floor is{floor}!')
+        # print(f'Your area is {area} m, you have {rooms} rooms, and your floor is{floor}!')
         # Print it to the screen
-        self.add_widget(Label(text=f'Your predicted price is {950 * area +  50 * (bedrooms * floor)}$!'))
+        self.add_widget(Label(text=f'Your predicted price is {950 * area +  50 * (rooms * floor)}$!'))
 
         # Clear the input boxes
         self.area.text = ""
-        self.bedrooms.text = ""
+        self.rooms.text = ""
         self.floor.text = ""
 
 
